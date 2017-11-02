@@ -13,7 +13,7 @@
       <div class="column">
         <div class="column">
           <label for="inputQuantity">Number of dice:</label>
-          <input id="inputQuantity" type="number" value="1">
+          <input id="inputQuantity" type="number" value="1" onchange="enableTotal()">
         </div>
         <div class="column">
           <label for="inputSides">Number of sides:</label>
@@ -22,7 +22,7 @@
       </div>
       <div class="column">
         <div class="row" id="totalRow">
-          <input id="sumOption" type="checkbox" name="sum">
+          <input id="sumOption" type="checkbox" name="sum" disabled>
           <label for="sumOption">Find total</label>
         </div>
         <div class="row">
