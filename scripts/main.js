@@ -1,9 +1,9 @@
+let output = document.querySelector("#output");
 
 randomNumber = (sides) => Math.floor(Math.random() * sides) + 1;
 
 printOutput = (message) => {
-  let output = document.querySelector("#output");
-  output.textContent += " " + message;
+  output.innerHTML += `<p>${message}</p>`;
 }
 
 rollDice = () => {
@@ -12,6 +12,9 @@ rollDice = () => {
   let sumFlag = document.querySelector("#sumOption").checked;
   let sum = 0;
 
+  let content = output.innerHTML;
+  output.innerHTML = "";
+
   for (let i = 0; i < quantity; i++) {
     let num = randomNumber(sides);
     sum += num;
@@ -19,6 +22,8 @@ rollDice = () => {
   }
 
   if (sumFlag) {
-    printOutput("Sum of rolls = " + sum);
+    printOutput("Total = " + sum);
   }
+
+  output.innerHTML += content; 
 }

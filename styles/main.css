@@ -7,13 +7,26 @@
   justify-content: center;
 }
 #input .row {
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
 }
-
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 #input input {
+  border: 0;
   font-family: 'Saira', Arial;
   font-size: 1.5em;
+  padding: 0 0.25em;
+}
+#inputQuantity {
+  text-align: right;
+}
+#inputSides {
+  text-align: left;
 }
 
 #rollButton {
