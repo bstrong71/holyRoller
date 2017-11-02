@@ -10,6 +10,8 @@ rollDice = () => {
   let quantity = document.querySelector("#inputQuantity").value;
   let sides = document.querySelector("#inputSides").value;
   let sumFlag = document.querySelector("#sumOption").checked;
+  let saveFlag = document.querySelector("#saveOption").checked;
+
   let sum = 0;
 
   let content = output.innerHTML;
@@ -21,9 +23,10 @@ rollDice = () => {
     printOutput(num);
   }
 
-  if (sumFlag) {
+  if (sumFlag && quantity > 1) {
     printOutput("Total = " + sum);
   }
-
-  output.innerHTML += content; 
+  if (saveFlag) {
+    output.innerHTML += content;
+  }
 }
