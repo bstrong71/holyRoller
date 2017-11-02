@@ -4,16 +4,21 @@
     <meta charset="utf-8">
     <title>Holy Roller</title>
     <link href="https://fonts.googleapis.com/css?family=Saira:200,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
   </head>
   <body>
     <section>
       <div id="input">
-        <input id="inputQuantity" type="number" value="2">
-        <p>d</p>
-        <input id="inputSides" type="number" value="6">
-        <label for="sumOption">Add rolls?</label>
-        <input id="sumOption" type="checkbox" name="sum">
+        <div class="row">
+          <input id="inputQuantity" type="number" value="2">
+          <p>d</p>
+          <input id="inputSides" type="number" value="6">
+        </div>
+        <div class="row">
+          <label for="sumOption">Add rolls?</label>
+          <input id="sumOption" type="checkbox" name="sum">
+        </div>
         <button id="rollButton" type="button" name="button" onclick="rollDice()">Roll!</button>
       </div>
     </section>

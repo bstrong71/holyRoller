@@ -1,18 +1,30 @@
 #input {
   align-items: center;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
+  font-family: 'Saira', Arial;
   font-size: 1.5em;
   justify-content: center;
 }
+#input .row {
+  display: flex;
+  flex-flow: row nowrap;
+}
 
 #input input {
+  font-family: 'Saira', Arial;
   font-size: 1.5em;
 }
 
 #rollButton {
   background: blue;
+  border: none;
+  border-radius: 10px;
   color: white;
   cursor: pointer;
+  font: 2em 'Saira', Arial;
   padding: 20px;
+}
+#rollButton:hover {
+  background: green;
 }
