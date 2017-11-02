@@ -36,4 +36,8 @@ rollDice = () => {
   if (saveFlag.checked) {
     output.innerHTML += content;
   }
+  if (quantity.value < 1 || sides.value < 2) {
+    output.innerHTML = "";
+    printOutput("I'm sorry, but I can't do that");
+  }
 }
