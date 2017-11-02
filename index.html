@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <title>Holy Roller</title>
-    <link href="https://fonts.googleapis.com/css?family=Saira:200,300,400,700" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Saira:200,300,400,700" rel="stylesheet"> -->
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
   </head>
@@ -13,11 +13,11 @@
       <div class="column">
         <div class="column">
           <label for="inputQuantity">Number of dice:</label>
-          <input id="inputQuantity" type="number" value="1" onchange="enableTotal()">
+          <input id="inputQuantity" type="number" min="1" value="1" onchange="enableTotal()">
         </div>
         <div class="column">
           <label for="inputSides">Number of sides:</label>
-          <input id="inputSides" type="number" value="6">
+          <input id="inputSides" type="number" min="2" value="6">
         </div>
       </div>
       <div class="column">
