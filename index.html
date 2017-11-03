@@ -22,17 +22,29 @@
       </div>
       <div class="column">
         <div class="row">
-          <input id="sumOption" type="checkbox" name="sum" disabled>
-          <label for="sumOption">Find total</label>
+          <label for="sumOption" class="switch">
+            <input id="sumOption" type="checkbox" name="sum" disabled>
+            <span class="slider round"></span>
+          </label>
+          Find total
         </div>
         <div class="row">
-          <input id="saveOption" type="checkbox" name="save" checked>
-          <label for="saveOption">Save rolls</label>
+          <label for="saveOption" class="switch">
+            <input id="saveOption" type="checkbox" name="save" checked>
+            <span class="slider round"></span>
+          </label>
+          Save rolls
         </div>
       </div>
       <button id="rollButton" type="button" name="button" onclick="rollDice()">Roll!</button>
     </header>
-    <main id="output"></main>
+    <main>
+      <article id="output"></article>
+      <aside id="graph">
+        <canvas id="myChart"></canvas>
+      </aside>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="./scripts/main.js" charset="utf-8"></script>
   </body>
 </html>
