@@ -4,7 +4,38 @@ let sides = document.querySelector("#inputSides");
 let sumFlag = document.querySelector("#sumOption");
 let saveFlag = document.querySelector("#saveOption");
 
-let resultsArr = [];
+let ctx = document.getElementById("myChart");
+
+let resultsObj = {};
+let labelsArr = [];
+let dataArr = [];
+
+let myPieChart = new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: labelsArr,
+    datasets: [{
+      label: 'Frequency',
+      data: dataArr,
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(255, 159, 64, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(153, 102, 255, 0.5)'
+      ]
+    }]
+  }
+});
+
+addData = (chart, label, data) => {
+  chart.data.labels.push(label);
+  chart.data.datasets.forEach((dataset) => {
+    dataset.data.push(data);
+  });
+  chart.update();
+}
 
 randomNumber = (sides) => Math.floor(Math.random() * sides) + 1;
 
@@ -33,7 +64,11 @@ rollDice = () => {
     let num = randomNumber(sides.value);
     printOutput(num);
     sum += num;
-    resultsArr.push(num);
+    if (resultsObj[num]) {
+      resultsObj[num]++;
+    } else {
+      resultsObj[num] = 1;
+    }
   }
 
   if (sumFlag.checked && quantity.value > 1) {
@@ -46,4 +81,17 @@ rollDice = () => {
     clearOutput();
     printOutput("I'm sorry, but I can't do that");
   }
+
+  labelsArr = [];
+  dataArr = [];
+
+  for (let key in resultsObj) {
+    labelsArr.push(key);
+    dataArr.push(resultsObj[key]);
+  }
+
+  console.log('labelsArr', labelsArr);
+  console.log('dataArr', dataArr);
+
+  myPieChart.update();
 }

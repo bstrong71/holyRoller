@@ -43,3 +43,7 @@ body {
   line-height: 1.25em;
   margin: 10px;
 }
+#graph {
+  float: right;
+  width: 25%;
+}
