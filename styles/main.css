@@ -38,12 +38,16 @@ body {
 #rollButton:hover {
   background: gold;
 }
+main {
+  display: flex;
+  flex-flow: row nowrap;
+}
 #output {
+  flex: 1 50%;
   font-size: 1.5em;
   line-height: 1.25em;
   margin: 10px;
 }
 #graph {
-  float: right;
-  width: 25%;
+  flex: 1 50%;
 }
