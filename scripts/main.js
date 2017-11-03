@@ -3,32 +3,8 @@ let quantity = document.querySelector("#inputQuantity");
 let sides = document.querySelector("#inputSides");
 let sumFlag = document.querySelector("#sumOption");
 let saveFlag = document.querySelector("#saveOption");
-let chartFlag = false;
-
-let ctx = document.getElementById("myChart");
 
 let resultsObj = {};
-// let labelsArr = [];
-// let dataArr = [];
-
-// let myPieChart = new Chart(ctx, {
-//   type: 'pie',
-//   data: {
-//     labels: labelsArr,
-//     datasets: [{
-//       label: 'Frequency',
-//       data: dataArr,
-//       backgroundColor: [
-//         'rgba(255, 99, 132, 0.5)',
-//         'rgba(255, 159, 64, 0.5)',
-//         'rgba(255, 206, 86, 0.5)',
-//         'rgba(75, 192, 192, 0.5)',
-//         'rgba(54, 162, 235, 0.5)',
-//         'rgba(153, 102, 255, 0.5)'
-//       ]
-//     }]
-//   }
-// });
 
 addData = (chart, label, data) => {
   chart.data.labels.push(label);
@@ -57,9 +33,6 @@ enableTotal = (e) => {
 }
 
 rollDice = () => {
-  if (chartFlag) {
-    document.querySelector('iframe').remove();
-  }
   let sum = 0;
   let content = output.innerHTML;
   clearOutput();
@@ -86,37 +59,33 @@ rollDice = () => {
     printOutput("I'm sorry, but I can't do that");
   }
 
-  // labelsArr = [];
-  // dataArr = [];
-  let labelsArr = [];
-  let dataArr = [];
+  graphData = [
+    ['Roll', 'Frequency']
+  ];
 
   for (let key in resultsObj) {
-    labelsArr.push(key);
-    dataArr.push(resultsObj[key]);
+    let arr = [key, resultsObj[key]];
+    graphData.push(arr);
   }
-
-  console.log('labelsArr', labelsArr);
-  console.log('dataArr', dataArr);
-
-  let myPieChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: labelsArr,
-      datasets: [{
-        label: 'Frequency',
-        data: dataArr,
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.5)',
-          'rgba(255, 159, 64, 0.5)',
-          'rgba(255, 206, 86, 0.5)',
-          'rgba(75, 192, 192, 0.5)',
-          'rgba(54, 162, 235, 0.5)',
-          'rgba(153, 102, 255, 0.5)'
-        ]
-      }]
-    }
-  });
-
-  chartFlag = true;
+  drawChart();
 }
+
+drawChart = () => {
+  let data = google.visualization.arrayToDataTable(graphData);
+
+  let options = {
+    title: 'Roll Frequency',
+    is3D: true,
+  };
+
+  let chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+  chart.draw(data, options);
+}
+
+// Google Graph global variables
+google.charts.load("current", {
+  packages: ["corechart"]
+});
+let graphData = [
+  ['Roll', 'Frequency']
+];
