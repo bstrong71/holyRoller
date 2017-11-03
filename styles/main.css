@@ -32,9 +32,9 @@ body {
 .switch {
   position: relative;
   display: inline-block;
-  width: 56px;
-  height: 30px;
-  margin-right: 1rem;
+  width: 30px;
+  height: 10px;
+  margin-right: 0.95rem;
 }
 
 .switch input {
@@ -55,10 +55,10 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 22px;
-  width: 22px;
-  left: 4px;
-  bottom: 4px;
+  height: 20px;
+  width: 20px;
+  left: -5px;
+  bottom: -5px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -72,10 +72,18 @@ input:focus + .slider {
   box-shadow: 0 0 1px orange;
 }
 
+input[disabled] + .slider.round::before {
+  background-color: rgba(255,255,255, 0.3);
+}
+
+input[disabled] + .slider {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
 }
 
 .slider.round {
