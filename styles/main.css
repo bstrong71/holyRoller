@@ -20,11 +20,81 @@ body {
   align-items: center;
   display: flex;
   flex-flow: row nowrap;
+  margin-top: 0.8rem;
 }
 .column {
   display: flex;
   flex-flow: column nowrap;
 }
+
+/* toggle switch styling */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 10px;
+  margin-right: 0.95rem;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: -5px;
+  bottom: -5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: orange;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px orange;
+}
+
+input[disabled] + .slider.round::before {
+  background-color: #CA6567;
+}
+
+input[disabled] + .slider {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* end of toggle styling */
 
 #rollButton {
   background: orange;
