@@ -1,0 +1,45 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+}
+#input {
+  align-items: center;
+  background: firebrick;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 1.5em;
+  justify-content: center;
+}
+#input > * {
+  flex: 1 25%;
+  margin: 10px;
+}
+.row {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+}
+.column {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#rollButton {
+  background: orange;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 20px;
+}
+#rollButton:hover {
+  background: gold;
+}
+#output {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  margin: 10px;
+}
