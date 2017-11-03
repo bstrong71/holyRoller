@@ -3,6 +3,7 @@ let quantity = document.querySelector("#inputQuantity");
 let sides = document.querySelector("#inputSides");
 let sumFlag = document.querySelector("#sumOption");
 let saveFlag = document.querySelector("#saveOption");
+let showGraph = document.querySelector("#showGraph");
 let chartFlag = false;
 
 let ctx = document.getElementById("myChart");
@@ -84,6 +85,11 @@ rollDice = () => {
   if (quantity.value < 1 || sides.value < 2) {
     clearOutput();
     printOutput("I'm sorry, but I can't do that");
+  }
+  if (!showGraph.checked) {
+    ctx.style.display = "none";
+  } else {
+    ctx.style.display = "block";
   }
 
   // labelsArr = [];
