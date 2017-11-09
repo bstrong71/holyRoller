@@ -122,5 +122,5 @@ main {
   flex: 1 50%;
 }
 .hide {
-  opacity: 0;
+  display: none;
 }
