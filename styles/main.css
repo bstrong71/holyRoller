@@ -121,3 +121,6 @@ main {
 #graph {
   flex: 1 50%;
 }
+.hide {
+  opacity: 0;
+}
