@@ -6,3 +6,4 @@ Holy Roller was developed as a paired programming (plus one) exercise with [Bern
 
 ### Utilizing
 - Vanilla JavaScript (ES6)
+- Google Charts
